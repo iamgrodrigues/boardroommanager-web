@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Boardroom } from '../boardroom';
+import { ActivatedRoute, Router } from '@angular/router';
+import { BoardroomService } from '../boardroom.service';
 
 @Component({
   selector: 'app-update-boardroom',
@@ -7,9 +10,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateBoardroomComponent implements OnInit {
 
-  constructor() { }
+  id:number;
+  boardroom:Boardroom;
+  submitted:false;
 
-  ngOnInit(): void {
+  constructor(private route ActivatedRoute, private router: Router,
+    private BoardroomService: BoardroomService) { }
+
+  ngOnInit(): {
+    this.boardroom = new Boardroom();
+
+    this.id = this.route.snapshot.params['id'];
+    this.BoardroomService.getBoardroom(this.id)
+    .subscribe(data => {
+      console.log(data);
+      this.boardroom = data;
+    }, error => console.log(error)
+    );
   }
 
+  UpdateBoardroom(){
+    this.boardroomService.updateBoardroom(this.id, this.boardroom)
+    .subscribe(data => console.log(data), error=> console.log(error));
+    this.boardroom = new Boardroom();
+    this.gotoList();
+
+  }
+
+  onsubmit() {
+    this.updateBoardroom();
+  }
+
+  gotoList(){
+    this.router.navigate(['/boardrooms']);
+  }
 }
