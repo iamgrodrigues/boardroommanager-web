@@ -1,1 +1,56 @@
-<p>create-boardroom works!</p>
+<h3>Create Boardroom</h3>
+<div [hidden]="submitted" style="width: 400px">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        required
+        [(ngModel)]="Boardroom.name"
+        name="name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="name">date</label>
+      <input
+        type="text"
+        class="form-control"
+        id="date"
+        required
+        [(ngModel)]="Boardroom.date"
+        name="date"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="name">startHour</label>
+      <input
+        type="text"
+        class="form-control"
+        id="startHour"
+        required
+        [(ngModel)]="Boardroom.startHour"
+        name="startHour"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="name">endHour</label>
+      <input
+        type="text"
+        class="form-control"
+        id="endHour"
+        required
+        [(ngModel)]="Boardroom.endHour"
+        name="endHour"
+      />
+    </div>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <button class="btn btn-success" (click)="newBoardroom()">Add</button> -->
+</div>
