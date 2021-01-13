@@ -3,7 +3,7 @@ import { BoardroomDetailsComponent } from 'src/app/boardroom-details.component';
 import { Observable } from 'rxjs';
 import { BoardroomService } from '../boardroom.service';
 import { Boardroom } from '../boardroom';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-boardroom-list',
