@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { BoardroomService } from '../boardroom-service';
 import { Boardroom } from '../boardroom';
 import { Router } from '@angular/router';
-import { BoardroomService } from '../boardroom.service';
 
 @Component({
   selector: 'app-create-boardroom',

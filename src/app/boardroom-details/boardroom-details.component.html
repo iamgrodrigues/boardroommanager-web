@@ -1,1 +1,21 @@
-<p>boardroom-details works!</p>
+<h2>Boardroom Details</h2>
+
+<hr>
+<div *ngIf="boardroom">
+  <div>
+    <label><b>Name</b></label>{{boardroom.name}}
+  </div>
+  <div>
+    <label><b>date</b></label>{{boardroom.date}}
+  </div>
+  <div>
+    <label><b>startHour</b></label>{{boardroom.startHour}}
+  </div>
+  <div>
+    <label><b>endHour</b></label>{{boardroom.endHour}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Boardroom List</button><br>
