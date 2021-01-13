@@ -20,17 +20,10 @@
           <td>{{ boardroom.startHour }}</td>
           <td>{{ boardroom.endHour }}</td>
           <td>
-            <button
-              (click)="deleteBoardroom(boardroom.id)"
-              class="btn btn-danger"
-            >
+            <button (click)="deleteBoardroom(boardroom.id)" class="btn btn-danger">
               Delete
             </button>
-            <button
-              (click)="updateBoardroom(boardroom.id)"
-              class="btn btn-info"
-              style="margin-left: 10px"
-            >
+            <button (click)="updateBoardroom(boardroom.id)" class="btn btn-info" style="margin-left: 10px">
               Update
             </button>
           </td>

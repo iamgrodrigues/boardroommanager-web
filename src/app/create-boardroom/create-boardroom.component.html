@@ -3,50 +3,23 @@
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">name</label>
-      <input
-        type="text"
-        class="form-control"
-        id="name"
-        required
-        [(ngModel)]="Boardroom.name"
-        name="name"
-      />
+      <input type="text" class="form-control" id="name" required [(ngModel)]="boardroom.name" name="name" />
     </div>
 
     <div class="form-group">
       <label for="name">date</label>
-      <input
-        type="text"
-        class="form-control"
-        id="date"
-        required
-        [(ngModel)]="Boardroom.date"
-        name="date"
-      />
+      <input type="text" class="form-control" id="date" required [(ngModel)]="boardroom.date" name="date" />
     </div>
 
     <div class="form-group">
       <label for="name">startHour</label>
-      <input
-        type="text"
-        class="form-control"
-        id="startHour"
-        required
-        [(ngModel)]="Boardroom.startHour"
-        name="startHour"
-      />
+      <input type="text" class="form-control" id="startHour" required [(ngModel)]="boardroom.startHour"
+        name="startHour" />
     </div>
 
     <div class="form-group">
       <label for="name">endHour</label>
-      <input
-        type="text"
-        class="form-control"
-        id="endHour"
-        required
-        [(ngModel)]="Boardroom.endHour"
-        name="endHour"
-      />
+      <input type="text" class="form-control" id="endHour" required [(ngModel)]="boardroom.endHour" name="endHour" />
     </div>
   </form>
 </div>
