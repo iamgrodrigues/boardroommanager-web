@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
 import { Boardroom } from '../boardroom';
+import { Component, OnInit, Input } from '@angular/core';
 import { BoardroomService } from '../boardroom.service';
-import { BoardroomListComponent } from '../boardroom-list.component';
+import { BoardroomListComponent } from '../boardroom-list/boardroom-list.component';
 import { Router, ActivatedRoute } from '@angular/router';
-import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 
 @Component({
   selector: 'app-boardroom-details',
@@ -15,22 +14,22 @@ export class BoardroomDetailsComponent implements OnInit {
   id: number;
   boardroom: Boardroom;
 
-  constructor(private route: ActivatedRoute, private router: Router,
-  private BoardroomService: BoardroomService) { }
+  constructor(private route: ActivatedRoute,private router: Router,
+    private boardroomService: BoardroomService) { }
 
-  ngOnInit(): {
+  ngOnInit() {
     this.boardroom = new Boardroom();
+
     this.id = this.route.snapshot.params['id'];
 
     this.boardroomService.getBoardroom(this.id)
-    .subscribe(data => {
-      console.log(data)
-      this.boardroom = data;
-
-    }, error => console.log(error));
+      .subscribe(data => {
+        console.log(data)
+        this.boardroom = data;
+      }, error => console.log(error));
   }
+
   list(){
     this.router.navigate(['boardrooms']);
   }
-
 }

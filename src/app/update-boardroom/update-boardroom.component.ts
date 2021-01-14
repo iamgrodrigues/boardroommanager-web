@@ -10,38 +10,38 @@ import { BoardroomService } from '../boardroom.service';
 })
 export class UpdateBoardroomComponent implements OnInit {
 
-  id:number;
-  boardroom:Boardroom;
-  submitted:false;
+  id: number;
+  boardroom: Boardroom;
+  submitted = false;
 
-  constructor(private route ActivatedRoute, private router: Router,
-    private BoardroomService: BoardroomService) { }
 
-  ngOnInit(): {
+  constructor(private route: ActivatedRoute,private router: Router,
+    private boardroomService: BoardroomService) { }
+
+  ngOnInit() {
     this.boardroom = new Boardroom();
 
     this.id = this.route.snapshot.params['id'];
-    this.BoardroomService.getBoardroom(this.id)
-    .subscribe(data => {
-      console.log(data);
-      this.boardroom = data;
-    }, error => console.log(error)
-    );
+
+    this.boardroomService.getBoardroom(this.id)
+      .subscribe(data => {
+        console.log(data)
+        this.boardroom = data;
+      }, error => console.log(error));
   }
 
-  UpdateBoardroom(){
+  updateBoardroom() {
     this.boardroomService.updateBoardroom(this.id, this.boardroom)
-    .subscribe(data => console.log(data), error=> console.log(error));
+      .subscribe(data => console.log(data), error => console.log(error));
     this.boardroom = new Boardroom();
     this.gotoList();
-
   }
 
-  onsubmit() {
+  onSubmit() {
     this.updateBoardroom();
   }
 
-  gotoList(){
+  gotoList() {
     this.router.navigate(['/boardrooms']);
   }
 }

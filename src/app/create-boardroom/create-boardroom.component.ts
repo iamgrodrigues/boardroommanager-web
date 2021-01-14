@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { BoardroomService } from '../boardroom-service';
+import { BoardroomService } from '../boardroom.service';
 import { Boardroom } from '../boardroom';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,14 +9,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./create-boardroom.component.css']
 })
 export class CreateBoardroomComponent implements OnInit {
+
   boardroom: Boardroom = new Boardroom();
   submitted = false;
 
-  constructor(private boardroomService: BoardroomService, private router: Router) {
+  constructor(private boardroomService: BoardroomService,
+    private router: Router) { }
 
-  }
-
-  ngOnInit(): {
+  ngOnInit() {
   }
 
   newBoardroom(): void {
@@ -26,8 +26,7 @@ export class CreateBoardroomComponent implements OnInit {
 
   save() {
     this.boardroomService.createBoardroom(this.boardroom)
-      .subscribe(data => console.log(data),
-        error => console.log(error));
+      .subscribe(data => console.log(data), error => console.log(error));
     this.boardroom = new Boardroom();
     this.gotoList();
   }
@@ -38,7 +37,6 @@ export class CreateBoardroomComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/boardrooms'])
+    this.router.navigate(['/boardrooms']);
   }
-
 }
