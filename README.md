@@ -63,6 +63,8 @@ If you have a SSH key registered in your Github account, clone the project using
 git clone git@github.com:iamgrodrigues/boardroommanager-web.git
 ```
 
+## Installing npm packages
+
 To install `npm` packages described in the `package.json` run this command:
 
 ```bash
