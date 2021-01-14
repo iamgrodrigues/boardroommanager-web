@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class BoardroomService {
 
-  private baseUrl = 'http://localhost:8082/api/v1/boardrooms';
+  private baseUrl = 'https://boardroommanager.herokuapp.com/api/v1/boardrooms';
 
   constructor(private http: HttpClient) { }
 

@@ -2,22 +2,22 @@
 <div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="name">name</label>
+      <label for="name">Name</label>
       <input type="text" class="form-control" id="name" required [(ngModel)]="boardroom.name" name="name">
     </div>
 
     <div class="form-group">
-      <label for="name">date</label>
+      <label for="name">Date</label>
       <input type="text" class="form-control" id="date" required [(ngModel)]="boardroom.date" name="date">
     </div>
 
     <div class="form-group">
-      <label for="name">startHour</label>
+      <label for="name">StartHour</label>
       <input type="text" class="form-control" id="startHour" required [(ngModel)]="boardroom.startHour" name="startHour">
     </div>
 
     <div class="form-group">
-        <label for="name">endHour</label>
+        <label for="name">EndHour</label>
         <input type="text" class="form-control" id="endHour" required [(ngModel)]="boardroom.endHour" name="endHour">
       </div>
 
