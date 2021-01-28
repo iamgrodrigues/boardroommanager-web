@@ -15,6 +15,7 @@
   <img align="center" src="https://i.ibb.co/k6dm6Mk/Boardroom-List.png" alt="CreateBoardroom" height="300" width="400" border="0">
 </p>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/06ec1420-5d5c-4d8a-9651-269539f4fd82/deploy-status)](https://app.netlify.com/sites/boardroommanager/deploys)
 
 # :pushpin: Table of Contents
 
